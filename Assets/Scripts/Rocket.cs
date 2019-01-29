@@ -36,7 +36,10 @@ public class Rocket : MonoBehaviour
                 audioSource.Play();
             }
         }
-        audioSource.Stop();
+        else
+        {
+            audioSource.Stop();
+        }
     }
 
     private void Rotate()
@@ -51,5 +54,18 @@ public class Rocket : MonoBehaviour
             transform.Rotate(-Vector3.forward * rotationSpeed * Time.deltaTime);
         }
         rigidBody.freezeRotation = false;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        switch(collision.gameObject.tag)
+        {
+            case "Friendly":
+                Debug.Log("Woop Woop");
+                break;
+            default:
+                Debug.Log(":(( you're dead");
+                break;
+        }
     }
 }
