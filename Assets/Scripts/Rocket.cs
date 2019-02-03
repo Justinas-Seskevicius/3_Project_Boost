@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Rocket : MonoBehaviour
 {
-
     [SerializeField] float thrustSpeed = 25f;
     [SerializeField] float rotationSpeed = 80f;
     [SerializeField] float levelLoadDelay = 1f;
@@ -18,6 +18,7 @@ public class Rocket : MonoBehaviour
     [SerializeField] ParticleSystem successParticles;
     [SerializeField] ParticleSystem deathParticles;
 
+    bool collisionDisabled = false;
     Rigidbody rigidBody;
     AudioSource audioSource;
 
@@ -37,6 +38,23 @@ public class Rocket : MonoBehaviour
         {
             RespondToThrustInput();
             RespondToRotateInput();
+        }
+
+        if(Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
+        }
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if(Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextLevel();
+        }
+        else if(Input.GetKeyDown(KeyCode.C))
+        {
+            collisionDisabled = !collisionDisabled;
         }
     }
 
@@ -80,7 +98,7 @@ public class Rocket : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(state != State.Alive) { return; }
+        if(state != State.Alive || collisionDisabled) { return; }
 
         switch(collision.gameObject.tag)
         {
