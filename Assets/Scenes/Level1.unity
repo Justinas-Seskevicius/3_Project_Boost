@@ -1300,11 +1300,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Rocket
       objectReference: {fileID: 0}
-    - target: {fileID: 4363422050382967186, guid: 147b204affcd8344d8b88501fb9c982c,
-        type: 3}
-      propertyPath: m_TagString
-      value: Friendly
-      objectReference: {fileID: 0}
     - target: {fileID: 4363422050382967187, guid: 147b204affcd8344d8b88501fb9c982c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2472,6 +2467,26 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 502925208}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &869918399 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6086171221415338600, guid: 535cf79d9c0ea3d40bee968b6646c9b1,
+    type: 3}
+  m_PrefabInstance: {fileID: 6160033820178522811}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &869918403
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 869918399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e0daf6898212224d938378574becd12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementVector: {x: 10, y: 0, z: 0}
+  period: 2
 --- !u!4 &944868929 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6139327771072900829, guid: 535cf79d9c0ea3d40bee968b6646c9b1,
@@ -6991,12 +7006,12 @@ PrefabInstance:
     - target: {fileID: 6139327771072900829, guid: 535cf79d9c0ea3d40bee968b6646c9b1,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 9.23
+      value: 6.81
       objectReference: {fileID: 0}
     - target: {fileID: 6139327771072900829, guid: 535cf79d9c0ea3d40bee968b6646c9b1,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.34
+      value: 23.21
       objectReference: {fileID: 0}
     - target: {fileID: 6139327771072900829, guid: 535cf79d9c0ea3d40bee968b6646c9b1,
         type: 3}
